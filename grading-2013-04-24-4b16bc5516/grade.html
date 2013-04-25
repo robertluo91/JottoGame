@@ -1,0 +1,203 @@
+
+<html>
+  <style TYPE="text/css">
+     body {
+       background: white;
+       color: #383838;
+       font-family:"Lucida Grande";
+     }
+     div.rawOutput {
+       border: .1em dotted #900;
+     }
+     div.content {
+       width: 800px
+     }
+     div.testResult {
+       text-align: center;
+       font-weight: bold;
+     }
+     div.points {
+       text-align: center;
+       font-weight: bold;
+     }
+     div.testName {
+       font-weight: bold;
+     }
+     p {
+       font-weight: bold;
+     }
+     td {
+     }
+     pre {
+       font-size: 80%;
+       margin-left: 30px;
+     }
+     hr {
+       background-color: #808080
+     }
+  </style>
+  <body>
+    <div class="content">
+    <div class="filler" style="height: 20px"></div>
+      <h2><div><p>Grade: 100 / 100</p><div></h2>
+      
+<br><p>Jotto GUI Tests</p>
+<div class="rawOutput"><pre>/Applications/eclipse
+Buildfile:
+/Users/skamil/Documents/work/mit/teaching/6.005/staff/spring13/psets/ps4/repos/yluo15/build.xml
+
+compile-student:
+    [mkdir] Created dir:
+/Users/skamil/Documents/work/mit/teaching/6.005/staff/spring13/psets/ps4/repos/yluo15/bin
+    [javac] Compiling 6 source files to
+/Users/skamil/Documents/work/mit/teaching/6.005/staff/spring13/psets/ps4/repos/yluo15/bin
+
+compile-autograder:
+    [mkdir] Created dir:
+/Users/skamil/Documents/work/mit/teaching/6.005/staff/spring13/psets/ps4/repos/yluo15/bin-tests
+    [javac] Compiling 1 source file to
+/Users/skamil/Documents/work/mit/teaching/6.005/staff/spring13/psets/ps4/repos/yluo15/bin-tests
+
+autograder:
+    [junit] Testsuite: ui.JottoGUIHiddenTest
+    [junit] Tests run: 17, Failures: 0, Errors: 0, Time elapsed: 45.872 sec
+    [junit] ------------- Standard Output ---------------
+    [junit] addHistory 0
+    [junit] addHistory 0
+    [junit] updateHistory
+    [junit] addHistory 0
+    [junit] updateHistory
+    [junit] addHistory 0
+    [junit] updateHistory
+    [junit] addHistory 0
+    [junit] you win!
+    [junit] updateHistory
+    [junit] addHistory 0
+    [junit] updateHistory
+    [junit] addHistory 0
+    [junit] updateHistory
+    [junit] addHistory 1
+    [junit] updateHistory
+    [junit] ------------- ---------------- ---------------
+    [junit]
+    [junit] Testcase: hasNewPuzzleNumber took 1.693 sec
+    [junit] Testcase: hasNewPuzzleButton took 0.621 sec
+    [junit] Testcase: hasPuzzleNumber took 0.609 sec
+    [junit] Testcase: hasGuessField took 0.6 sec
+    [junit] Testcase: hasGuessTable took 0.634 sec
+    [junit] Testcase: hasGuessTableRows took 0.603 sec
+    [junit] Testcase: startingPuzzleNumber took 0.594 sec
+    [junit] Testcase: randomPuzzleNumberPress took 1.134 sec
+    [junit] Testcase: setPuzzleNumberClick took 3.054 sec
+    [junit] Testcase: setPuzzleNumberTrivialClear took 0.954 sec
+    [junit] Testcase: setPuzzleNumberClear took 3.809 sec
+    [junit] Testcase: makeGuessClear took 2.565 sec
+    [junit] Testcase: makeGuess took 4.812 sec
+    [junit] Testcase: communicateWithServerError took 6.854 sec
+    [junit] Testcase: communicateWithServerWin took 4.845 sec
+    [junit] Testcase: multithreadImmediateGuess took 5.415 sec
+    [junit] Testcase: multithreadStillActive took 7.051 sec
+
+BUILD SUCCESSFUL
+Total time: 50 seconds
+</pre></div>
+<br><table width="800px">
+<tr>
+<td style="width:50px"><div class="points">4/4</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">hasNewPuzzleNumber</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">4/4</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">hasNewPuzzleButton</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">4/4</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">hasPuzzleNumber</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">4/4</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">hasGuessField</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">4/4</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">hasGuessTable</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">5/5</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">startingPuzzleNumber</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">10/10</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">randomPuzzleNumberPress</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">5/5</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">setPuzzleNumberClick</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">5/5</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">setPuzzleNumberTrivialClear</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">5/5</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">setPuzzleNumberClear</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">5/5</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">makeGuessClear</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">10/10</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">makeGuess</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">5/5</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">communicateWithServerError</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">10/10</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">communicateWithServerWin</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">10/10</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">multithreadImmediateGuess</div></td>
+</tr>
+
+<tr>
+<td style="width:50px"><div class="points">10/10</div></td>
+<td style="width:50px"><div class="testResult">PASS</div></td>
+<td style="width:700px"><div class="testName">multithreadStillActive</div></td>
+</tr></table>
+<br><hr style="background-color: #808080">
+    </div>
+  </body>
+</html>
