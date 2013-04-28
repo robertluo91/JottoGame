@@ -9,22 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * JottoModel takes in puzzle number + guess from the
- * client and converts the response message from the server into 
- * a 2-column format.
+ * JottoModel takes in puzzle number + guess from client and formats the response message from the server into 2 columns.
  *
  */
 public class JottoModel {
 	public final static String victory="guess 5 5";
 	/**
 	 * @param guess: a string to be submitted to the server
-	 * 	
-	 * @param puzzleNumber: the puzzle ID to be requested from the server
-	 * 				
-	 * @return (in String format) response or feedback from the server
+	 * @param puzzleNumber: the puzzle ID to be requested from the server				
+	 * @return a string which is response or feedback from the server
 	 * 			
-	 * @throws RuntimeException("IOException") when failing server connection
-	 * @throws RuntimeException("URLFailure") when URL is ill-formed
+	 * @throws RuntimeException("IOException") when server connection fails
+	 * @throws RuntimeException("URLFailure") when URL is ill-formated
 	 * @throws RuntimeException ("Null/Empty Response") 
 	 * @throws RuntimeException ("invalid feedback")	
 	 */
@@ -76,8 +72,7 @@ public class JottoModel {
 	 *          and the number of correct positions
 	 * @throws RuntimeException ("invalid response format")
 	 * 
-	 * rep invariant: the output is a 2-column arraylist containing
-	 *                the parsed feedback message from the server
+	 * Representation invariant: the output is a 2-column arraylist containing the parsed feedback message from the server
 	 */
 	public static List<String> convertResponse(String response){
 		String guessM = "(guess [0-5] [0-5])";

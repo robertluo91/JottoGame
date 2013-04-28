@@ -18,19 +18,11 @@ import java.awt.event.WindowEvent;
 import java.util.Random;
 
 /**
- * The GUI for Jotto game. Makes uses of labels, buttons, text fields and tables
- * to make a complete GUI for the game.
+ * The GUI for Jotto game. The GUI contains elements like labels, buttons, text fields and tables.
+ * A user can type in a text field "PuzzleNumber" and "guess" and hit enter, or click a button "newPuzzleButton" 
+ * to change the GUI relying on the action listener.
  * 
- * In this GUI, a user can type in a text field and hit enter, or click a button
- * to trigger changes in the GUI itself.
- * 
- * Moreover, action listener is added to the text fields puzzleNumber and
- * guess, and to the button newPuzzleButton. So, action events are triggered,
- * and changes happen in GUI according to the user-inputs or interactions in
- * those components.
- * 
- * JottoGUI's layout is organized by groupLayout class.
- * 
+ * GUI contains the following main elements:
  * (1) newPuzzleButton: press to generate new puzzle question
  * (2) newPuzzleNumber: textField where the player can specify puzzle number and
  * "listens" to action "enter" to update puzzle puzzleNumber
@@ -49,7 +41,7 @@ import java.util.Random;
  * - one thread per new guess input
  * - a background thread for the GUI
  * Since the underlying data structures of Java Swing are inherently unsafe, we use
- * SwingUtilities.invokeLater() to queue messages to run in the single 
+ * SwingUtilities.invokeLater() to make it thread safe by queuing messages to run in the single 
  * designated GUI thread.
  * 
  * All fields in the GUI are private final. The only shared mutable datatype
@@ -57,23 +49,13 @@ import java.util.Random;
  * The rep invariants (please see below) for the guessTable, however, are always 
  * preserved even in concurrent conditions. Specifically:
  * (1) GUI.updateHistory() is written such that the guess string and its associated
- *     server feedback always have the same row number in the table - rep invariant 
- *     1 is satisfied.
- * (2) Whenever a new guess is entered, a new row will be appended to the table 
- *     even if the server has not yet returned - rep invariant 2 is satisfied.
+ *     server feedback always have the same row number in the table, even if the feedback is delayed from the server
+ * (2) The last row of guessTable corresponds to the most recent guess entered.
+ * 		Whenever a new guess is entered, a new row will be appended to the table 
+ *     even if the server has not yet returned.
  *     
- * Therefore, in a multi-threaded setting, the rep invariants are still preserved
- * , cleared from race conditions. 
+ * Therefore, in a multi-threaded setting, the rep invariants are still preserved without race conditions. 
  *
- */
-/**
- * rep invariant for the GUI
- * (1) the guess string and its corresponding feedback must be in the same
- *     row of guessTable, even if the feedback is delayed from the server
- * (2) the last row of guessTable corresponds to the most recent guess entered
- *     (note: entered, NOT returned)
- * (3) (trivial) the JTextField 'guess' is always cleared after a new input 
- *     has been submitted to the server
  */
 
 
@@ -194,7 +176,7 @@ public class JottoGUI extends JFrame {
 			newPuzzleNumber = Integer.parseInt(userInput);
 		} catch (Exception e) {//test field is empty
 			final Random generator = new Random();
-			newPuzzleNumber = generator.nextInt(100000); //generate a random number between 0 and 100000 for the puzzle ID
+			newPuzzleNumber = generator.nextInt(100000); 
 		}
 		if (newPuzzleNumber == 0) {
 			throw new RuntimeException("puzzle number failure!");
@@ -205,7 +187,7 @@ public class JottoGUI extends JFrame {
 
 	/**
 	 * 
-	 * @return the puzzle number on which Jotto Game is running
+	 * @return the puzzle number on which the game is running
 	 */
 	public int getCurrentPuzzleNumber() {
 		return PuzzleNumbernow;

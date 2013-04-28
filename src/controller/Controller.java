@@ -8,7 +8,7 @@ import ui.JottoGUI;
 /**
  * 
  * Controller is the listener for client guess input.
- * It starts a new thread whenever a new guess has been entered.
+ * It starts a new thread whenever the user enters a new guess.
  *
  */
 public class Controller implements ActionListener {

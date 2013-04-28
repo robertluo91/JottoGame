@@ -8,8 +8,7 @@ import ui.JottoGUI;
 /**
  * PuzzleNumberController is the listener for client specification of puzzle number
  * 
- * It updates the puzzle number based on the client input (either by hitting the button
- * newPuzzleNumber or writing in the puzzle number text field). Also, it resets the 
+ * It updates the puzzle number based on the client inputs and resets the 
  * guessTable in the View. 
  *
  */

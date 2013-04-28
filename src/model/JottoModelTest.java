@@ -7,18 +7,18 @@ import org.junit.Test;
 /**
  * 
  * Testing Strategy for JottoModel 
- * (1) Test whether a perfect guess returns 'guess 5 5'
- * (2) Test whether a legitimate guess gets valid response from
+ * A. Test whether a perfect guess returns 'guess 5 5'
+ * B. Test whether a legitimate guess gets valid response from
  *     the sever
  *     Case 1: without delay; Case 2: with delay (* included)
- * (3) Test whether the server returns Type 1 Error if the puzzle
+ * C. Test whether the server returns Type 1 Error if the puzzle
  *     ID is invalid (Puzzle ID <= 0)
- * (4) Test whether the server still correctly returns even when 
+ * D. Test whether the server still correctly returns even when 
  *     the puzzle ID is a very large number
- * (5) Test for errors from the server  
- *     i) guess too long  
- *     ii) guess too short
- *     iii) guess contains illegal character(s)
+ * E. Test for errors from the server  
+ *     1) guess too long  
+ *     2) guess too short
+ *     3) guess contains illegal character(s)
  */  
 
 public class JottoModelTest {
@@ -51,21 +51,21 @@ public class JottoModelTest {
 	@Test
 	public void invalidGuessID2(){
 		// puzzle ID < 0 
-		String expected = "error 1";
+		String expectedresult = "error 1";
 		String result = JottoModel.makeGuess("crazy", -1);
-		assertEquals(expected,result.substring(0, 7));
+		assertEquals(expectedresult,result.substring(0, 7));
 	}
 	
 	@Test
 	public void validButLargeGuessID(){
 		// puzzle ID very large 
-		String expected = "guess 1 1";
+		String expectedresult = "guess 1 1";
 		String result = JottoModel.makeGuess("crazy", Integer.MAX_VALUE);
-		assertEquals(expected,result);
+		assertEquals(expectedresult,result);
 	}
 	
 	@Test
-	public void error2Test1(){
+	public void error2Test(){
 		// guess too long
 		String expected = "error 2";
 		String result = JottoModel.makeGuess("transformer", 16952);
